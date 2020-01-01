@@ -69,10 +69,9 @@ func test(params ...int) {
 
 func main() {
 	var tree BST
-	tree.right = make([]int, 10)
-	tree.left = make([]int, 10)
+	tree.right = make([]int, 7)
+	tree.left = make([]int, 7)
 	tree.free = 1
-	// tree.value = make([]int, 10)
 	tree.add(5)
 	tree.add(7)
 	tree.add(8)
@@ -80,8 +79,26 @@ func main() {
 	tree.add(3)
 	tree.add(4)
 	tree.add(2)
-	fmt.Println("ind", []int{0, 1, 2, 3, 4, 5, 6})
-	fmt.Println("val", tree.value)
-	fmt.Println("rig", tree.right)
-	fmt.Println("lef", tree.left)
+	fmt.Println("index", []int{0, 1, 2, 3, 4, 5, 6})
+	fmt.Println("value", tree.value)
+	fmt.Println("right", tree.right)
+	fmt.Println("left ", tree.left)
 }
+
+/*
+index [0 1 2 3 4 5 6]
+value [5 7 8 6 3 4 2]
+right [1 2 0 0 5 0 0]
+left  [4 3 0 0 6 0 0]
+
+             5
+
+    	 /        \
+
+      3              7
+
+   /     \        /     \
+
+2          4    6          8
+
+*/
