@@ -10,9 +10,15 @@ func TestStack(t *testing.T) {
 	if len(s.s) != 3 {
 		t.Error("Length stack must be 3")
 	}
-	if v, _ := s.Pop(); v != 3 {
+	v, err := s.Pop()
+	if err != nil {
+		t.Fail()
+	}
+	if v != 3 {
 		t.Error("First value must be 3")
 	}
-
-	t.Log(s.Pop())
+	v, _ = s.Pop()
+	if v != 2 {
+		t.Error("First value must be 3")
+	}
 }
